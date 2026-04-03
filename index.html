@@ -45,8 +45,6 @@ color:#b983ff;
 letter-spacing:2px;
 }
 
-/* NAV LINKS */
-
 nav ul{
 display:flex;
 list-style:none;
@@ -86,8 +84,12 @@ animation: glowPulse 3s infinite alternate;
 }
 
 @keyframes glowPulse{
-from{box-shadow:0 0 20px #9333ea;}
-to{box-shadow:0 0 45px #c084fc;}
+from{
+box-shadow:0px 0px 20px #9333ea;
+}
+to{
+box-shadow:0px 0px 45px #c084fc;
+}
 }
 
 .hero h1{
@@ -121,7 +123,7 @@ transition:.3s;
 }
 
 .btn:hover{
-box-shadow:0 0 25px #9333ea;
+box-shadow:0px 0px 25px #9333ea;
 transform:translateY(-3px);
 }
 
@@ -141,10 +143,10 @@ transition:.4s;
 .social-icons a:hover{
 color:#c084fc;
 transform:translateY(-6px) scale(1.2);
-text-shadow:0 0 18px #9333ea;
+text-shadow:0px 0px 18px #9333ea;
 }
 
-/* SECTION TITLE */
+/* SECTION */
 
 section{
 padding:90px 10%;
@@ -170,7 +172,7 @@ transition:.4s;
 
 .card:hover{
 transform:translateY(-10px);
-box-shadow:0 0 30px #9333ea;
+box-shadow:0px 0px 30px #9333ea;
 }
 
 /* SKILLS GRID */
@@ -183,16 +185,15 @@ gap:30px;
 
 .skills-grid .card:hover{
 border:1px solid #9333ea;
-box-shadow:0 0 30px #9333ea;
+box-shadow:0px 0px 30px #9333ea;
 }
 
-/* EXPERIENCE CARD */
+/* EXPERIENCE PREMIUM CARD */
 
-.experience-card,
-.education-card{
+.experience-card{
 
-max-width:1000px;
-margin:25px auto;
+max-width:1100px;
+margin:auto;
 
 background:rgba(255,255,255,.03);
 
@@ -200,59 +201,106 @@ border:1px solid rgba(192,132,252,.25);
 
 border-radius:22px;
 
-padding:40px;
+padding:40px 45px;
 
 transition:.4s;
 
 }
 
-.experience-card:hover,
-.education-card:hover{
+.experience-card:hover{
 
-box-shadow:0 0 35px #9333ea;
+box-shadow:0px 0px 35px #9333ea;
 
 }
 
-/* TITLE COLOR */
-
-.experience-card h3,
-.education-card h3{
+.experience-card h3{
 
 color:#c084fc;
+
 margin-bottom:10px;
 
 }
 
-/* META TEXT */
-
-.exp-meta,
-.edu-meta{
+.exp-meta{
 
 margin:6px 0;
+
 opacity:.9;
 
 }
 
-/* ICON STYLE */
-
-.exp-meta i,
-.edu-meta i{
+.exp-meta i{
 
 margin-right:10px;
+
 color:#c084fc;
 
 }
 
-/* LIST */
-
 .experience-card ul{
 
 margin-top:18px;
+
 line-height:1.9;
 
 }
 
-/* PROJECT CARD */
+/* EDUCATION PREMIUM CARD */
+
+.education-card{
+
+max-width:900px;
+margin:20px auto;
+
+background:rgba(255,255,255,.03);
+
+border:1px solid rgba(192,132,252,.25);
+
+border-radius:22px;
+
+padding:30px 40px;
+
+transition:.4s;
+
+}
+
+.education-card:hover{
+
+box-shadow:0px 0px 35px #9333ea;
+
+transform:translateY(-4px);
+
+}
+
+/* TITLE */
+
+.education-card h3{
+
+color:#c084fc;
+
+margin-bottom:10px;
+
+}
+
+/* META INFO */
+
+.edu-meta{
+
+margin:6px 0;
+
+opacity:.9;
+
+}
+
+.edu-meta i{
+
+margin-right:10px;
+
+color:#c084fc;
+
+}
+
+/* PROJECT CARDS */
 
 .project-card{
 background:rgba(255,255,255,.05);
@@ -260,14 +308,39 @@ padding:30px;
 border-radius:20px;
 margin-bottom:25px;
 transition:.4s;
+position:relative;
+overflow:hidden;
 }
 
 .project-card:hover{
 transform:scale(1.04);
-box-shadow:0 0 35px #9333ea;
+box-shadow:0px 0px 35px #9333ea;
 }
 
-/* CONTACT CARD */
+/* EDUCATION NODE */
+
+.timeline{
+border-left:3px solid #9333ea;
+padding-left:30px;
+}
+
+.timeline-item{
+margin-bottom:30px;
+position:relative;
+}
+
+.timeline-item::before{
+content:"";
+position:absolute;
+left:-38px;
+top:5px;
+width:14px;
+height:14px;
+background:#9333ea;
+border-radius:50%;
+}
+
+/* CONTACT */
 
 .contact{
 text-align:center;
@@ -311,7 +384,6 @@ margin-top:40px;
 
 <img src="images/profile.jpg">
 
-<h1>Hi I am</h1>
 <h1>Samir Biswakarma</h1>
 
 <h2>Data Analyst | Machine Learning Enthusiast | Power BI Developer</h2>
@@ -320,9 +392,13 @@ margin-top:40px;
 MSc Data Science student transforming raw data into actionable insights using Python, SQL and Power BI.
 </p>
 
-<a href="SAMIR BISWAKARMA.pdf" class="btn">Download Resume</a>
+<a href="SAMIR BISWAKARMA.pdf" class="btn">
+Download Resume
+</a>
 
-<a href="https://github.com/samirsonar" target="_blank" class="btn">GitHub</a>
+<a href="https://github.com/samirsonar" target="_blank" class="btn">
+GitHub
+</a>
 
 <div class="social-icons">
 
@@ -363,9 +439,13 @@ Motivated MSc Data Science student skilled in Python, Machine Learning, SQL, Sta
 <div class="skills-grid">
 
 <div class="card">Python • SQL • Machine Learning</div>
+
 <div class="card">Pandas • NumPy • Matplotlib • Seaborn</div>
+
 <div class="card">Power BI • Excel • Dashboard Design</div>
+
 <div class="card">Statistics • Hypothesis Testing • Regression</div>
+
 <div class="card">GitHub • Jupyter Notebook</div>
 
 </div>
@@ -419,6 +499,48 @@ Pune District, Maharashtra, India
 
 </section>
 
+<section id="projects">
+
+<h2 class="section-title">Academic Projects</h2>
+
+<div class="project-card">
+
+<h3>Sales Forecasting using Machine Learning</h3>
+
+<ul>
+<li>Performed EDA, preprocessing and feature engineering</li>
+<li>Implemented Logistic Regression and Decision Tree models</li>
+<li>Evaluated performance using confusion matrix</li>
+</ul>
+
+</div>
+
+<div class="project-card">
+
+<h3>Sales Performance Dashboard (Power BI)</h3>
+
+<ul>
+<li>Designed KPI dashboard analyzing revenue trends</li>
+<li>Visualized region-wise performance</li>
+<li>Enabled decision-making insights</li>
+</ul>
+
+</div>
+
+<div class="project-card">
+
+<h3>COVID-19 Data Analysis Project</h3>
+
+<ul>
+<li>Cleaned dataset and handled missing values</li>
+<li>Performed statistical aggregation and grouping</li>
+<li>Generated pairplots, histograms and scatter visualizations</li>
+</ul>
+
+</div>
+
+</section>
+
 <section id="education">
 
 <h2 class="section-title">Education</h2>
@@ -438,6 +560,7 @@ Central University of Haryana
 </p>
 
 </div>
+
 
 <div class="education-card">
 
