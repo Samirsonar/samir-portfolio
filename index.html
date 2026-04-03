@@ -64,6 +64,27 @@ nav ul li a:hover{
 color:#00f5ff;
 }
 
+/* NAVBAR MOBILE FIX */
+
+@media(max-width:768px){
+
+nav{
+
+padding:10px 20px;
+
+}
+
+nav ul{
+
+gap:12px;
+font-size:14px;
+flex-wrap:wrap;
+justify-content:center;
+
+}
+
+}
+
 /* HERO */
 
 .hero{
@@ -116,6 +137,20 @@ margin:10px auto;
 .hero-left{
 
 text-align:center;
+
+}
+
+}
+
+/* HERO NAME MOBILE FIX */
+
+@media(max-width:768px){
+
+.hero h1{
+
+font-size:38px;
+line-height:1.2;
+word-break:normal;
 
 }
 
@@ -881,6 +916,16 @@ text-align:center;
 padding:25px;
 background:black;
 margin-top:40px;
+}
+
+/* FIX NAVBAR OVERLAP ON MOBILE */
+
+@media(max-width:768px){
+
+.hero{
+padding-top:120px;
+}
+
 }
 
 </style>
