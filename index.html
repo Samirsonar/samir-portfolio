@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Samir Biswakarma | Data Analyst Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* GLOBAL */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins', sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background: radial-gradient(circle at top,#120b2f,#05010f);
+color:white;
+}
+
+/* NAVBAR */
+
+nav{
+position:fixed;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 60px;
+background:rgba(0,0,0,.4);
+backdrop-filter:blur(10px);
+z-index:1000;
+}
+
+nav h2{
+color:#b983ff;
+letter-spacing:2px;
+}
+
+/* NAV LINKS */
+
+nav ul{
+display:flex;
+list-style:none;
+}
+
+nav ul li{
+margin-left:30px;
+}
+
+nav ul li a{
+text-decoration:none;
+color:white;
+transition:.3s;
+}
+
+nav ul li a:hover{
+color:#00f5ff;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.hero img{
+width:190px;
+border-radius:50%;
+border:4px solid #b983ff;
+margin-bottom:20px;
+animation: glowPulse 3s infinite alternate;
+}
+
+@keyframes glowPulse{
+from{box-shadow:0 0 20px #9333ea;}
+to{box-shadow:0 0 45px #c084fc;}
+}
+
+.hero h1{
+font-size:50px;
+background:linear-gradient(90deg,#c084fc,#9333ea,#c084fc);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero h2{
+color:#c084fc;
+margin:10px;
+}
+
+.hero p{
+max-width:600px;
+opacity:.8;
+}
+
+/* BUTTON */
+
+.btn{
+margin:15px;
+padding:12px 28px;
+border-radius:30px;
+background:linear-gradient(90deg,#9333ea,#c084fc);
+color:white;
+font-weight:600;
+text-decoration:none;
+transition:.3s;
+}
+
+.btn:hover{
+box-shadow:0 0 25px #9333ea;
+transform:translateY(-3px);
+}
+
+/* SOCIAL ICONS */
+
+.social-icons{
+margin-top:18px;
+}
+
+.social-icons a{
+color:white;
+font-size:26px;
+margin:12px;
+transition:.4s;
+}
+
+.social-icons a:hover{
+color:#c084fc;
+transform:translateY(-6px) scale(1.2);
+text-shadow:0 0 18px #9333ea;
+}
+
+/* SECTION TITLE */
+
+section{
+padding:90px 10%;
+}
+
+.section-title{
+text-align:center;
+font-size:36px;
+margin-bottom:50px;
+color:#c084fc;
+}
+
+/* GLASS CARD */
+
+.card{
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+padding:25px;
+border-radius:18px;
+backdrop-filter:blur(10px);
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 30px #9333ea;
+}
+
+/* SKILLS GRID */
+
+.skills-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.skills-grid .card:hover{
+border:1px solid #9333ea;
+box-shadow:0 0 30px #9333ea;
+}
+
+/* EXPERIENCE CARD */
+
+.experience-card,
+.education-card{
+
+max-width:1000px;
+margin:25px auto;
+
+background:rgba(255,255,255,.03);
+
+border:1px solid rgba(192,132,252,.25);
+
+border-radius:22px;
+
+padding:40px;
+
+transition:.4s;
+
+}
+
+.experience-card:hover,
+.education-card:hover{
+
+box-shadow:0 0 35px #9333ea;
+
+}
+
+/* TITLE COLOR */
+
+.experience-card h3,
+.education-card h3{
+
+color:#c084fc;
+margin-bottom:10px;
+
+}
+
+/* META TEXT */
+
+.exp-meta,
+.edu-meta{
+
+margin:6px 0;
+opacity:.9;
+
+}
+
+/* ICON STYLE */
+
+.exp-meta i,
+.edu-meta i{
+
+margin-right:10px;
+color:#c084fc;
+
+}
+
+/* LIST */
+
+.experience-card ul{
+
+margin-top:18px;
+line-height:1.9;
+
+}
+
+/* PROJECT CARD */
+
+.project-card{
+background:rgba(255,255,255,.05);
+padding:30px;
+border-radius:20px;
+margin-bottom:25px;
+transition:.4s;
+}
+
+.project-card:hover{
+transform:scale(1.04);
+box-shadow:0 0 35px #9333ea;
+}
+
+/* CONTACT CARD */
+
+.contact{
+text-align:center;
+}
+
+.contact .card{
+max-width:450px;
+margin:auto;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:25px;
+background:black;
+margin-top:40px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+<h2>Samir</h2>
+
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#certifications">Certifications</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<section class="hero">
+
+<img src="images/profile.jpg">
+
+<h1>Hi I am</h1>
+<h1>Samir Biswakarma</h1>
+
+<h2>Data Analyst | Machine Learning Enthusiast | Power BI Developer</h2>
+
+<p>
+MSc Data Science student transforming raw data into actionable insights using Python, SQL and Power BI.
+</p>
+
+<a href="SAMIR BISWAKARMA.pdf" class="btn">Download Resume</a>
+
+<a href="https://github.com/samirsonar" target="_blank" class="btn">GitHub</a>
+
+<div class="social-icons">
+
+<a href="https://github.com/samirsonar" target="_blank">
+<i class="fa-brands fa-github"></i>
+</a>
+
+<a href="https://www.linkedin.com/in/samir-biswakarma/" target="_blank">
+<i class="fa-brands fa-linkedin"></i>
+</a>
+
+<a href="mailto:samirxnr@email.com">
+<i class="fa-solid fa-envelope"></i>
+</a>
+
+</div>
+
+</section>
+
+<section id="about">
+
+<h2 class="section-title">About Me</h2>
+
+<div class="card">
+
+<p>
+Motivated MSc Data Science student skilled in Python, Machine Learning, SQL, Statistics and Power BI. Experienced in data cleaning, feature engineering, visualization and predictive modeling.
+</p>
+
+</div>
+
+</section>
+
+<section id="skills">
+
+<h2 class="section-title">Technical Skills</h2>
+
+<div class="skills-grid">
+
+<div class="card">Python • SQL • Machine Learning</div>
+<div class="card">Pandas • NumPy • Matplotlib • Seaborn</div>
+<div class="card">Power BI • Excel • Dashboard Design</div>
+<div class="card">Statistics • Hypothesis Testing • Regression</div>
+<div class="card">GitHub • Jupyter Notebook</div>
+
+</div>
+
+</section>
+
+<section id="experience">
+
+<h2 class="section-title">Experience</h2>
+
+<div class="experience-card">
+
+<h3>Data Science Intern</h3>
+
+<p class="exp-meta">
+<i class="fa-solid fa-building"></i>
+Internship Studio · Full-time
+</p>
+
+<p class="exp-meta">
+<i class="fa-solid fa-calendar"></i>
+Jan 2026 – Feb 2026
+</p>
+
+<p class="exp-meta">
+<i class="fa-solid fa-location-dot"></i>
+Pune District, Maharashtra, India
+</p>
+
+<ul>
+
+<li>Performed COVID-19 dataset analysis using Python, Pandas, NumPy, Matplotlib and Seaborn</li>
+
+<li>Cleaned datasets by handling missing values, removing duplicates and converting date formats</li>
+
+<li>Applied feature engineering techniques including month extraction and case–death ratio creation</li>
+
+<li>Generated visualizations such as histograms, scatter plots, pairplots and bar charts</li>
+
+<li>Built Loan Approval Prediction model using Logistic Regression achieving 77% accuracy</li>
+
+<li>Encoded categorical variables and handled missing values using statistical techniques</li>
+
+<li>Evaluated machine learning model performance using confusion matrix and classification report</li>
+
+<li>Exported processed datasets using Pandas for reporting and analytics workflows</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section id="education">
+
+<h2 class="section-title">Education</h2>
+
+<div class="education-card">
+
+<h3>MSc Data Science</h3>
+
+<p class="edu-meta">
+<i class="fa-solid fa-building-columns"></i>
+Central University of Haryana
+</p>
+
+<p class="edu-meta">
+<i class="fa-solid fa-calendar"></i>
+2024 – Present
+</p>
+
+</div>
+
+<div class="education-card">
+
+<h3>BCA</h3>
+
+<p class="edu-meta">
+<i class="fa-solid fa-building-columns"></i>
+Dibrugarh University
+</p>
+
+<p class="edu-meta">
+<i class="fa-solid fa-calendar"></i>
+2021 – 2024
+</p>
+
+</div>
+
+</section>
+
+<section id="certifications">
+
+<h2 class="section-title">Certifications</h2>
+
+<div class="card">
+
+<ul>
+
+<li>Data Science Training & Internship Certificate</li>
+<li>Sales Forecasting Machine Learning Certificate</li>
+<li>Python for Data Science Course</li>
+<li>Introduction to Data Analytics Course</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section id="contact" class="contact">
+
+<h2 class="section-title">Contact</h2>
+
+<div class="card">
+
+<p>Email: samirxnr@email.com</p>
+<p>Phone: +91-8099413325</p>
+<p>GitHub: github.com/samirsonar</p>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 Samir Biswakarma | Data Analyst Portfolio
+
+</footer>
+
+</body>
+</html>
