@@ -88,11 +88,37 @@ justify-content:center;
 /* HERO */
 
 .hero{
-height:100vh;
+min-height:100vh;
+height:auto;
+padding-bottom:80px;
 display:flex;
 justify-content:space-between;
 align-items:center;
 padding:0 12%;
+}
+
+@media(max-width:768px){
+
+.hero{
+padding-top:120px;
+padding-bottom:60px;
+}
+
+.hero-buttons{
+display:flex;
+flex-direction:column;
+gap:15px;
+align-items:center;
+}
+
+.social-icons{
+margin-top:20px;
+}
+
+#about h2{
+margin-top:40px;
+}
+
 }
 
 /* MOBILE HERO TEXT FIX */
@@ -965,6 +991,10 @@ box-shadow:0 0 40px #9333ea;
 
 }
 
+}
+
+#about{
+margin-top:60px;
 }
 
 
