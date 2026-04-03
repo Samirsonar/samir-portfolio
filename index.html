@@ -69,14 +69,75 @@ color:#00f5ff;
 .hero{
 height:100vh;
 display:flex;
-flex-direction:column;
-justify-content:center;
+justify-content:space-between;
 align-items:center;
+padding:0 12%;
+}
+
+/* HERO CONTAINER SPLIT LAYOUT */
+
+.hero-left{
+max-width:600px;
+}
+
+.hero-right img{
+width:300px;
+border-radius:50%;
+border:4px solid #b983ff;
+animation: glowPulse 3s infinite alternate;
+}
+
+
+/* NEW: EXPERIENCE LOGO FLEX (ADDED ONLY) */
+
+.exp-flex{
+display:flex;
+align-items:flex-start;
+gap:20px;
+margin-bottom:20px;
+}
+
+.exp-logo{
+width:70px;
+height:70px;
+object-fit:contain;
+}
+
+/* NEW: EDUCATION LOGO FLEX (ADDED ONLY) */
+
+.edu-flex{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+.edu-logo{
+width:55px;
+height:55px;
+object-fit:contain;
+}
+
+/* RESPONSIVE FOR MOBILE */
+
+@media(max-width:900px){
+
+.hero{
+flex-direction:column;
 text-align:center;
 }
 
+.hero-left{
+max-width:100%;
+}
+
+.hero-right{
+margin-top:30px;
+}
+
+}
+
 .hero img{
-width:190px;
+width:300px;
 border-radius:50%;
 border:4px solid #b983ff;
 margin-bottom:20px;
@@ -87,21 +148,22 @@ animation: glowPulse 3s infinite alternate;
 from{
 box-shadow:0px 0px 20px #9333ea;
 }
-to{
-box-shadow:0px 0px 45px #c084fc;
-}
+
 }
 
 .hero h1{
-font-size:50px;
-background:linear-gradient(90deg,#c084fc,#9333ea,#c084fc);
+font-size:60px;
+font-weight:700;
+background:linear-gradient(90deg,#c084fc,#9333ea);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
+margin-bottom:15px;
 }
 
 .hero h2{
-color:#c084fc;
-margin:10px;
+font-size:26px;
+color:white;
+margin-bottom:10px;
 }
 
 .hero p{
@@ -109,10 +171,23 @@ max-width:600px;
 opacity:.8;
 }
 
+.hero-role{
+font-size:20px;
+color:#c084fc;
+margin-bottom:15px;
+}
+
+.hero-desc{
+font-size:17px;
+opacity:.85;
+margin-bottom:25px;
+line-height:1.7;
+}
+
 /* BUTTON */
 
 .btn{
-margin:15px;
+margin:15px 15px 15px 0;
 padding:12px 28px;
 border-radius:30px;
 background:linear-gradient(90deg,#9333ea,#c084fc);
@@ -145,6 +220,7 @@ color:#c084fc;
 transform:translateY(-6px) scale(1.2);
 text-shadow:0px 0px 18px #9333ea;
 }
+
 
 /* SECTION */
 
@@ -186,6 +262,50 @@ gap:30px;
 .skills-grid .card:hover{
 border:1px solid #9333ea;
 box-shadow:0px 0px 30px #9333ea;
+}
+
+.skills-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+}
+
+.skill-card{
+background:rgba(255,255,255,.03);
+border:1px solid rgba(192,132,252,.25);
+border-radius:20px;
+padding:25px;
+transition:.4s;
+}
+
+.skill-card:hover{
+transform:translateY(-6px);
+box-shadow:0 0 30px #9333ea;
+}
+
+.skill-header{
+display:flex;
+align-items:center;
+gap:15px;
+margin-bottom:15px;
+}
+
+.skill-header i{
+font-size:22px;
+color:#c084fc;
+background:rgba(168,85,247,.15);
+padding:12px;
+border-radius:12px;
+}
+
+.skill-tags span{
+display:inline-block;
+background:#141236;
+color:#c084fc;
+padding:6px 14px;
+margin:6px 6px 0 0;
+border-radius:20px;
+font-size:13px;
 }
 
 /* EXPERIENCE PREMIUM CARD */
@@ -242,6 +362,48 @@ color:#c084fc;
 margin-top:18px;
 
 line-height:1.9;
+
+}
+
+/* CERTIFICATE BUTTONS */
+
+.certificate-buttons{
+
+margin-top:25px;
+
+display:flex;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+}
+
+.cert-btn{
+
+display:inline-block;
+
+padding:12px 25px;
+
+background:linear-gradient(90deg,#9333ea,#c084fc);
+
+border-radius:30px;
+
+text-decoration:none;
+
+color:white;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+.cert-btn:hover{
+
+box-shadow:0px 0px 20px #9333ea;
+
+transform:translateY(-3px);
 
 }
 
@@ -303,18 +465,310 @@ color:#c084fc;
 /* PROJECT CARDS */
 
 .project-card{
+
 background:rgba(255,255,255,.05);
+
 padding:30px;
+
 border-radius:20px;
-margin-bottom:25px;
+
 transition:.4s;
+
 position:relative;
+
 overflow:hidden;
+
+height:100%;
+
 }
 
 .project-card:hover{
-transform:scale(1.04);
+
+transform:translateY(-8px);
+
 box-shadow:0px 0px 35px #9333ea;
+
+}
+
+.projects-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:40px;
+
+}
+
+/* Responsive layout for mobile */
+
+@media(max-width:900px){
+
+.projects-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+/* IMPACT BOX */
+
+.impact-box{
+
+margin-top:20px;
+
+background:rgba(168,85,247,.12);
+
+border-radius:14px;
+
+padding:18px;
+
+}
+
+/* PROJECT IMAGE GALLERY */
+
+.project-gallery{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+
+gap:15px;
+
+margin-top:20px;
+
+}
+
+
+/* PROJECT IMAGES */
+
+.project-gallery img{
+
+width:100%;
+
+border-radius:12px;
+
+transition:.4s;
+
+}
+
+
+.project-gallery img:hover{
+
+transform:scale(1.05);
+
+box-shadow:0px 0px 25px #9333ea;
+
+}
+
+/* PROJECT BUTTON */
+
+.project-btn{
+
+display:inline-block;
+
+margin-top:18px;
+
+padding:10px 22px;
+
+border-radius:30px;
+
+background:linear-gradient(90deg,#9333ea,#c084fc);
+
+text-decoration:none;
+
+color:white;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+.project-btn:hover{
+
+box-shadow:0px 0px 20px #9333ea;
+
+transform:translateY(-3px);
+
+}
+
+.project-image{
+
+width:100%;
+
+border-radius:15px;
+
+margin-top:20px;
+
+transition:.4s;
+
+}
+
+.project-image:hover{
+
+transform:scale(1.03);
+
+box-shadow:0px 0px 25px #9333ea;
+
+}
+
+.project-btn-center{
+
+display:flex;
+
+justify-content:center;
+
+margin-top:25px;
+
+}
+
+/* IMAGE SLIDER */
+
+.slider-container{
+
+position:relative;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+margin-top:25px;
+
+}
+
+
+.slider-main-image{
+
+width:75%;
+
+max-width:750px;
+
+border-radius:18px;
+
+transition:.4s;
+
+}
+
+
+.slider-main-image:hover{
+
+transform:scale(1.02);
+
+box-shadow:0px 0px 30px #9333ea;
+
+}
+
+
+.slider-btn{
+
+position:absolute;
+
+top:50%;
+
+transform:translateY(-50%);
+
+background:linear-gradient(90deg,#9333ea,#c084fc);
+
+border:none;
+
+color:white;
+
+font-size:24px;
+
+padding:12px 18px;
+
+cursor:pointer;
+
+border-radius:50%;
+
+}
+
+
+.slider-btn.left{
+
+left:5%;
+
+}
+
+
+.slider-btn.right{
+
+right:5%;
+
+}
+
+/* BUTTON STYLE */
+
+.slider-btn{
+
+position:absolute;
+
+top:50%;
+
+transform:translateY(-50%);
+
+background:#9333ea;
+
+border:none;
+
+color:white;
+
+font-size:22px;
+
+padding:10px 14px;
+
+cursor:pointer;
+
+border-radius:50%;
+
+z-index:10;
+
+}
+
+
+.slider-btn.left{
+
+left:5px;
+
+}
+
+
+.slider-btn.right{
+
+right:5px;
+
+}
+
+/* for tags */
+
+.tech-stack{
+
+margin-top:15px;
+
+}
+
+.tech-stack span{
+
+display:inline-block;
+
+background:#1e1b4b;
+
+color:#c084fc;
+
+padding:6px 12px;
+
+margin:5px 5px 0px 0px;
+
+border-radius:20px;
+
+font-size:13px;
+
+border:1px solid #9333ea;
+
 }
 
 /* EDUCATION NODE */
@@ -382,19 +836,26 @@ margin-top:40px;
 
 <section class="hero">
 
-<img src="images/profile.jpg">
+<div class="hero-left">
 
-<h1>Hi I am</h1>
+<h2>Hi, I am</h2>
+
 <h1>Samir Biswakarma</h1>
 
-<h2>Data Analyst | Machine Learning Enthusiast | Power BI Developer</h2>
+<p class="hero-role">
+Data Science | Data Analyst | ML | Python | SQL | Power BI
+</p>
 
-<p>
+<p class="hero-desc">
 MSc Data Science student transforming raw data into actionable insights using Python, SQL and Power BI.
 </p>
 
 <a href="SAMIR BISWAKARMA.pdf" class="btn">
 Download Resume
+</a>
+
+<a href="#projects" class="btn">
+View Projects
 </a>
 
 <a href="https://github.com/samirsonar" target="_blank" class="btn">
@@ -417,7 +878,18 @@ GitHub
 
 </div>
 
+</div>
+
+
+<div class="hero-right">
+
+<img src="images/profile.jpg">
+
+</div>
+
 </section>
+
+
 
 <section id="about">
 
@@ -426,7 +898,10 @@ GitHub
 <div class="card">
 
 <p>
-Motivated MSc Data Science student skilled in Python, Machine Learning, SQL, Statistics and Power BI. Experienced in data cleaning, feature engineering, visualization and predictive modeling.
+Aspiring Data Analyst and Data Science professional with practical experience in Python, SQL, Statistics, and Power BI, currently pursuing an MSc in Data Science. Experienced in data preprocessing, exploratory analysis, visualization, and machine learning model development through academic and internship projects.
+</p>
+<p>
+Built real-world analytics solutions including interactive dashboards and time-series forecasting systems using advanced models such as Prophet, LSTM, SARIMA, and XGBoost. Passionate about leveraging data to support decision-making and solve business problems through analytical insights.
 </p>
 
 </div>
@@ -437,27 +912,118 @@ Motivated MSc Data Science student skilled in Python, Machine Learning, SQL, Sta
 
 <h2 class="section-title">Technical Skills</h2>
 
-<div class="skills-grid">
+<div class="skills-container">
 
-<div class="card">Python • SQL • Machine Learning</div>
 
-<div class="card">Pandas • NumPy • Matplotlib • Seaborn</div>
+<div class="skill-card">
 
-<div class="card">Power BI • Excel • Dashboard Design</div>
+<div class="skill-header">
+<i class="fa-solid fa-code"></i>
+<h3>Programming</h3>
+</div>
 
-<div class="card">Statistics • Hypothesis Testing • Regression</div>
+<div class="skill-tags">
+<span>Python</span>
+<span>SQL</span>
+</div>
 
-<div class="card">GitHub • Jupyter Notebook</div>
+</div>
+
+
+<div class="skill-card">
+
+<div class="skill-header">
+<i class="fa-solid fa-toolbox"></i>
+<h3>Libraries & Tools</h3>
+</div>
+
+<div class="skill-tags">
+<span>NumPy</span>
+<span>Pandas</span>
+<span>Matplotlib</span>
+<span>Seaborn</span>
+<span>Scikit-learn</span>
+</div>
+
+</div>
+
+
+<div class="skill-card">
+
+<div class="skill-header">
+<i class="fa-solid fa-chart-column"></i>
+<h3>Data Visualization</h3>
+</div>
+
+<div class="skill-tags">
+<span>Power BI</span>
+<span>Excel</span>
+</div>
+
+</div>
+
+
+<div class="skill-card">
+
+<div class="skill-header">
+<i class="fa-solid fa-square-root-variable"></i>
+<h3>Statistics</h3>
+</div>
+
+<div class="skill-tags">
+<span>Probability</span>
+<span>Hypothesis Testing</span>
+<span>Regression</span>
+</div>
+
+</div>
+
+
+<div class="skill-card">
+
+<div class="skill-header">
+<i class="fa-solid fa-brain"></i>
+<h3>Machine Learning</h3>
+</div>
+
+<div class="skill-tags">
+<span>Deep Learning</span>
+</div>
+
+</div>
+
+
+<div class="skill-card">
+
+<div class="skill-header">
+<i class="fa-solid fa-laptop-code"></i>
+<h3>Tools & Platforms</h3>
+</div>
+
+<div class="skill-tags">
+<span>Jupyter Notebook</span>
+<span>GitHub</span>
+</div>
+
+</div>
+
 
 </div>
 
 </section>
+
 
 <section id="experience">
 
 <h2 class="section-title">Experience</h2>
 
 <div class="experience-card">
+
+<div class="exp-flex">
+
+<img src="images/internship-studio-logo.png" class="exp-logo">
+
+<div>
 
 <h3>Data Science Intern</h3>
 
@@ -475,6 +1041,10 @@ Jan 2026 – Feb 2026
 <i class="fa-solid fa-location-dot"></i>
 Pune District, Maharashtra, India
 </p>
+
+</div>
+
+</div>
 
 <ul>
 
@@ -496,6 +1066,26 @@ Pune District, Maharashtra, India
 
 </ul>
 
+<div class="certificate-buttons">
+
+<a href="certificates/internship-certificate.pdf"
+target="_blank"
+class="cert-btn">
+
+View Internship Completion Certificate
+
+</a>
+
+<a href="certificates/training-certificate.pdf"
+target="_blank"
+class="cert-btn">
+
+View Data Science Training Certificate
+
+</a>
+
+</div>
+
 </div>
 
 </section>
@@ -504,78 +1094,209 @@ Pune District, Maharashtra, India
 
 <h2 class="section-title">Academic Projects</h2>
 
-<div class="project-card">
+<div class="projects-grid">
 
-<h3>Sales Forecasting using Machine Learning</h3>
-
-<ul>
-<li>Performed EDA, preprocessing and feature engineering</li>
-<li>Implemented Logistic Regression and Decision Tree models</li>
-<li>Evaluated performance using confusion matrix</li>
-</ul>
-
-</div>
+<!-- PROJECT 1 -->
 
 <div class="project-card">
 
 <h3>Sales Performance Dashboard (Power BI)</h3>
 
-<ul>
-<li>Designed KPI dashboard analyzing revenue trends</li>
-<li>Visualized region-wise performance</li>
-<li>Enabled decision-making insights</li>
-</ul>
+<p class="project-year">2025</p>
+
+<p>
+Designed and developed an interactive Power BI dashboard using an
+e-commerce dataset to analyze revenue trends, category-wise sales,
+regional performance and customer purchasing behavior.
+
+Implemented dynamic filters, slicers and KPI cards to monitor
+business performance metrics including total sales, profit,
+discount impact and order volume across different regions
+and product segments.
+</p>
+
+<div class="impact-box">
+
+<b>Impact:</b><br>
+
+Enabled stakeholders to track real-time business performance,
+identify underperforming regions and product categories,
+analyze discount influence on profitability and support
+data-driven strategic planning through interactive
+visual analytics.
 
 </div>
+
+<div class="tech-stack">
+
+<span>Power BI</span>
+<span>Data Visualization</span>
+<span>KPI Dashboard</span>
+<span>Business Intelligence</span>
+<span>Data Modeling</span>
+<span>Interactive Filters</span>
+
+</div>
+
+<div class="project-btn-center">
+
+<a href="https://samir118-ecommerce-dashboard.hf.space/"
+target="_blank"
+class="project-btn">
+
+View Live Dashboard →
+
+</a>
+
+</div>
+
+</div>
+
+
+<!-- PROJECT 2 -->
+
+<div class="project-card">
+
+<h3>Sales Forecasting using Machine Learning</h3>
+
+<p class="project-year">2025</p>
+
+<p>
+Built a machine learning–based sales forecasting system using a large retail
+transaction dataset (100,000+ records). Performed data cleaning, outlier
+analysis, feature engineering and exploratory data analysis to identify key
+business relationships between sales, profit, discount and product categories.
+
+Implemented multiple forecasting models including Holt-Winters, Prophet,
+LSTM, SARIMA and XGBoost for time-series prediction. Compared model performance
+using MAE and RMSE evaluation metrics and identified XGBoost as the most
+accurate forecasting approach for future demand prediction.
+</p>
+
+<div class="impact-box">
+
+<b>Impact:</b><br>
+
+Identified that higher discount levels negatively impact profit while having
+minimal influence on sales growth, enabling better pricing strategy decisions.
+Developed a multi-model forecasting pipeline and achieved improved prediction
+accuracy using XGBoost for short-term sales demand forecasting.
+
+</div>
+
+<div class="tech-stack">
+
+<span>Python</span>
+<span>Pandas</span>
+<span>Seaborn</span>
+<span>Time Series Forecasting</span>
+<span>LSTM</span>
+<span>XGBoost</span>
+<span>Prophet</span>
+
+</div>
+
+<div class="slider-container">
+
+<button class="slider-btn left" onclick="prevSlide()">❮</button>
+
+<img id="slider-image"
+src="images/sales-forecast-comparison.png"
+class="slider-main-image">
+
+<button class="slider-btn right" onclick="nextSlide()">❯</button>
+
+</div>
+
+</div>
+
+
+<!-- PROJECT 3 -->
 
 <div class="project-card">
 
 <h3>COVID-19 Data Analysis Project</h3>
 
-<ul>
-<li>Cleaned dataset and handled missing values</li>
-<li>Performed statistical aggregation and grouping</li>
-<li>Generated pairplots, histograms and scatter visualizations</li>
-</ul>
+<p class="project-year">2026</p>
+
+<p>
+Cleaned dataset, handled missing values, performed statistical
+aggregation and grouping. Generated pairplots, histograms and
+scatter visualizations to identify infection trends.
+</p>
+
+<div class="impact-box">
+
+<b>Impact:</b><br>
+
+Generated meaningful visual insights from pandemic data using
+EDA techniques and visualization-driven analysis.
+
+</div>
+
+<div class="tech-stack">
+
+<span>Python</span>
+<span>Pandas</span>
+<span>NumPy</span>
+<span>Matplotlib</span>
+<span>Seaborn</span>
+<span>EDA</span>
+<span>Data Cleaning</span>
+
+</div>
+
+</div>
 
 </div>
 
 </section>
 
+<!-- EDUCATION SECTION FIXED + LOGOS ADDED -->
+
 <section id="education">
 
 <h2 class="section-title">Education</h2>
 
-<div class="education-card">
+
+<div class="education-card edu-flex">
+
+<img src="images/cuh-logo.png" class="edu-logo">
+
+<div>
 
 <h3>MSc Data Science</h3>
 
 <p class="edu-meta">
-<i class="fa-solid fa-building-columns"></i>
 Central University of Haryana
 </p>
 
 <p class="edu-meta">
-<i class="fa-solid fa-calendar"></i>
 2024 – Present
 </p>
 
 </div>
 
+</div>
 
-<div class="education-card">
+
+<div class="education-card edu-flex">
+
+<img src="images/dibrugarh-logo.png" class="edu-logo">
+
+<div>
 
 <h3>BCA</h3>
 
 <p class="edu-meta">
-<i class="fa-solid fa-building-columns"></i>
 Dibrugarh University
 </p>
 
 <p class="edu-meta">
-<i class="fa-solid fa-calendar"></i>
 2021 – 2024
 </p>
+
+</div>
 
 </div>
 
@@ -612,6 +1333,7 @@ Dibrugarh University
 
 </div>
 
+
 </section>
 
 <footer>
@@ -619,6 +1341,8 @@ Dibrugarh University
 © 2026 Samir Biswakarma | Data Analyst Portfolio
 
 </footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>
